@@ -11,15 +11,23 @@ package ca.sheridancollege.project;
  *
  * @author dancye
  */
-public abstract class Card {
-    //default modifier for child classes
+public class Card {
+    private final String suit;
+    private final String rank;
+    private final int value;
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
+    public Card(String suit, String rank, int value) {
+        this.suit = suit;
+        this.rank = rank;
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
     @Override
-    public abstract String toString();
-
+    public String toString() {
+        return rank + " of " + suit;
+    }
 }
